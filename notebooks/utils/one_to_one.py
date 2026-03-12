@@ -1,11 +1,8 @@
 # Program for one-to-one mapping dictionary for backclassification of NACE rev. 2.1 to 2.0
 
-import numpy as np
 import pandas as pd
 import openpyxl # used indirectly
 
-import os
-import s3fs
 
 def _get_norwegian_dict():
     norway_one_to_one = {
@@ -25,17 +22,9 @@ def _get_norwegian_dict():
     return norway_one_to_one
 
 
-def _get_excel():
-    # Read in excel file
-    path_excel = "https://minio.lab.sspcloud.fr/projet-aiml4os-wp10/Cluster5/NACE2.1-NACE2_Table_V1.05.xlsx"
-    dt = pd.read_excel(path_excel, sheet_name="Sheet0")
-
-    return dt
-
-
-def _get_problem_NACE():
+def get_problem_NACE(path_excel):
     # Read in excel correspondence table
-    dt = _get_excel()
+    dt = pd.read_excel(path_excel, sheet_name="Sheet0")
 
     # Filter for level 4
     dt_level4 = dt.loc[dt.LEVEL == 4, :].copy()
@@ -45,13 +34,12 @@ def _get_problem_NACE():
     dt_problem = dt_level4.loc[mask_problem, :]
 
     # Format and convert to list
-    dt_problem.NACE21_Code = dt_problem.NACE21_Code.apply(lambda x: f"{x[:2]}.{x[3]}.{x[4]}")
     problem_ls = dt_problem.NACE21_Code.tolist()
 
     return problem_ls
 
 
-def get_1to1_dict(national_dict=None):
+def get_1to1_dict(path_excel, national_dict=None):
     """
     Build a 1-to-1 correspondence dictionary between NACE21 and NACE2 codes 
     based on a standard EU correspondence table.
@@ -73,7 +61,7 @@ def get_1to1_dict(national_dict=None):
         corresponding ``NACE2_Code`` values.
     """
     # Read in excel correspondence table
-    dt = _get_excel()
+    dt = pd.read_excel(path_excel, sheet_name="Sheet0")
 
     # Filter for level 4
     dt_level4 = dt.loc[dt.LEVEL == 4, :].copy()
@@ -102,5 +90,6 @@ def get_1to1_dict(national_dict=None):
 
 
 if __name__ == "__main__":
-    one_to_one_dict = get_1to1_dict()
+    excel_path = "https://minio.lab.sspcloud.fr/projet-aiml4os-wp10/Cluster5/NACE2.1-NACE2_Table_V1.05.xlsx"
+    one_to_one_dict = get_1to1_dict(excel_path)
     print(one_to_one_dict)

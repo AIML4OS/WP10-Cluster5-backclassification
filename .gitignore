@@ -54,3 +54,57 @@ po/*~
 rsconnect/
 
 /.quarto/
+
+# python files
+**/__pycache__/
+
+# Virtual environments
+.env
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+*.egg
+
+# Logs
+*.log
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+
+# Tools
+.mypy_cache/
+.pytype/
+.pyre/
+ruff_cache/
+dmypy.json
+
+# IDE folders
+.vscode/
+.idea/
+
+# MacOS files
+.DS_Store

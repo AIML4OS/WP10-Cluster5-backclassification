@@ -2,8 +2,9 @@
 
 import pandas as pd
 
-# Keys er NACE revision 2.1
-keyword_rules = {
+# Example of keywords rules from Norway
+# Note: keys er NACE revision 2.1
+norwegian_rules = {
     '14.24': {
         '14.20': ['pels'],
         '14.11': []
@@ -17,7 +18,7 @@ keyword_rules = {
 
 def _classify_company_rules(company, keyword_rules, company_nace21, company_text):
     nace = company[company_nace21]
-    text = company.get(company_text, "").lower() # returns "" if missing
+    text = company.get(company_text, "").lower()
 
     # Check keyword-based rules
     if nace in keyword_rules:
@@ -52,5 +53,6 @@ if __name__ == "__main__":
                                 "Bygg varmt, Radiator installasjon i privat bolig."]
                   })
 
-    NACE2_new = classify_rules(df, keyword_rules=keyword_rules, company_nace21="sn2025", company_text="company_name_description")
+    NACE2_new = classify_rules(df, keyword_rules=norwegian_rules, company_nace21="sn2025", 
+        company_text="company_name_description")
     print(NACE2_new)
