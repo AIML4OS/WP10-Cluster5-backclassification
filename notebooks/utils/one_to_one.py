@@ -68,12 +68,8 @@ def get_1to1_dict(path_excel, national_dict=None):
 
     # Filter for 1:1 or many:1 and not missing
     mask_problem = dt_level4.TypeOfCorrespondence.isna()
-    mask_1 = dt_level4.TypeOfCorrespondence.str.endswith(":1")
+    mask_1 = dt_level4.NumberOfCorresponding_NACE2 == 1
     dt_xto1 = dt_level4.loc[mask_1 & ~mask_problem, :].copy()
-
-    # Format NACE to xx.x.x pattern
-    dt_xto1.NACE21_Code = dt_xto1.NACE21_Code.apply(lambda x: f"{x[:2]}.{x[3]}.{x[4]}")
-    dt_xto1.NACE2_Code = dt_xto1.NACE2_Code.apply(lambda x: f"{x[:2]}.{x[3]}.{x[4]}")
 
     # Create dict
     one_to_one = dt_xto1.set_index('NACE21_Code')['NACE2_Code'].to_dict()
