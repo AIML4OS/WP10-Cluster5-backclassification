@@ -5,6 +5,8 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime
+import os
+import s3fs
 
 from one_to_one import get_1to1_dict
 from rules_classification import classify_rules, norwegian_rules
@@ -65,7 +67,14 @@ if __name__ == "__main__":
 
     # Save data
     datestamp = datetime.now().strftime("%Y-%m-%d")
-    filename_train = f"s3://projet-aiml4os-wp10/Cluster5/train_doublenace_{datestamp}.parquet"
-    filename_test = f"s3://projet-aiml4os-wp10/Cluster5/test_doublenace_{datestamp}.parquet"
-    train.to_parquet(filename_train)
-    test.to_parquet(filename_test)
+    s3_endpoint_url = "https://" + os.environ["AWS_S3_ENDPOINT"]
+    fs = s3fs.S3FileSystem(client_kwargs={'endpoint_url': s3_endpoint_url})
+
+    bucket_out = "projet-aiml4os-wp10"
+    filename_train = f"{bucket_out}/Cluster5/train_doublenace_{datestamp}.parquet"
+    filename_test = f"{bucket_out}/Cluster5/test_doublenace_{datestamp}.parquet"
+
+    with fs.open(filename_train, 'w') as file_out:
+        train.to_parquet(file_out)
+    with fs.open(filename_test, 'w') as file_out:
+        test.to_parquet(file_out)
