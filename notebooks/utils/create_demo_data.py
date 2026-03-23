@@ -60,9 +60,13 @@ if __name__ == "__main__":
     test["possibles"] = get_possibles(test, "nace_21_code", conversion_path)
 
     # Random choice of one possible code
+    np.random.seed(42)
     train['nace_20_code'] = train.apply(fill_nace, axis=1)
     test['nace_20_code'] = test.apply(fill_nace, axis=1)
 
+    # Clean up
+    train = train.drop(columns=["possibles", "company_text"])
+    test = test.drop(columns=["possibles", "company_text"])
     print(f'Number of nace 2.0 codes filled after random choice: {train.nace_20_code.notna().sum()}')
 
     # Save data
@@ -74,7 +78,7 @@ if __name__ == "__main__":
     filename_train = f"{bucket_out}/Cluster5/train_doublenace_{datestamp}.parquet"
     filename_test = f"{bucket_out}/Cluster5/test_doublenace_{datestamp}.parquet"
 
-    with fs.open(filename_train, 'w') as file_out:
+    with fs.open(filename_train, 'wb') as file_out:
         train.to_parquet(file_out)
-    with fs.open(filename_test, 'w') as file_out:
+    with fs.open(filename_test, 'wb') as file_out:
         test.to_parquet(file_out)
