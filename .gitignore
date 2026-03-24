@@ -65,6 +65,13 @@ venv/
 ENV/
 env/
 
+# Mlflow
+mlflow.db
+mlruns/
+mlflow_artifacts/
+mlartifacts/
+.trash/
+
 # Jupyter notebooks checkpoints
 .ipynb_checkpoints/
 
