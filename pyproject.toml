@@ -5,9 +5,18 @@ description = "A basic project template for Python"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "arrow>=1.3.0",
+    "boto3>=1.42.74",
     "great-tables>=0.17.0",
+    "ipywidgets>=8.1.7",
     "jupyter>=1.1.1",
     "matplotlib>=3.10.3",
+    "mlflow>=3.10.1",
+    "nltk>=3.9.4",
+    "openpyxl>=3.1.5",
     "pandas>=2.3.0",
     "polars>=1.30.0",
+    "pyarrow>=23.0.1",
+    "s3fs>=0.4.2",
+    "scikit-learn>=1.8.0",
 ]
