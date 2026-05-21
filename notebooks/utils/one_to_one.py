@@ -22,7 +22,22 @@ def _get_norwegian_dict():
     return norway_one_to_one
 
 
-def get_problem_NACE(path_excel):
+def get_problem_NACE(path_excel: str):
+    """
+    Get a list of NACE revision 2.1 codes that are problem groups for manual classisifcation
+    
+    Parameters
+    ----------
+    path_excel : str
+        A path to an excel file where sheet name 'sheet0' contains infomration on conversion of NACE 
+        between revisioni 2.1 and 2.0. Variables should include 'LEVEL', 'NACE21_Code' and 'TypeOfCorrespondence'
+
+    Returns
+    -------
+    list
+       A list of NACE rev. 2.1 codes that are missing correspondence to rev. 2.0
+    
+    """
     # Read in excel correspondence table
     dt = pd.read_excel(path_excel, sheet_name="Sheet0")
 
@@ -39,7 +54,7 @@ def get_problem_NACE(path_excel):
     return problem_ls
 
 
-def get_1to1_dict(path_excel, national_dict=None):
+def get_1to1_dict(path_excel: str, national_dict: dict =None):
     """
     Build a 1-to-1 correspondence dictionary between NACE21 and NACE2 codes 
     based on a standard EU correspondence table.
