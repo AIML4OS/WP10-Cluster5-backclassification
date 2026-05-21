@@ -4,8 +4,8 @@ format: html # This qmd file will be compiled as HTML only (no notebook)
 include-before-body:
   - text: <img src="resources/cover/main2.png" style="max-width:900px;width:100%"><br>
 author:
-  - name: Public Statistician 1
-    url: https://github.com/publicstatistician1
+  - name: Susie Jentoft
+    url: https://github.com/sjentoft
     email: Public.Statistician1@statistics.org
   - name: Public Statistician 2
     url: https://github.com/publicstatistician2
@@ -90,13 +90,17 @@ gsbpm: "5.1" # See complete taxonomy: https://www.unescap.org/sites/default/d8fi
 ---
 
 
-# What is this template?
+# Introduction
 
-This template is a Quarto Website customized for the AIML4OS project, designed to be used with {{< fa brands python >}}.
+National statistics’ offices (NSOs) around the world, have to align their statistics to international standards, such as the industry classification NACE. Over time, international standards need to be updated to reflect changes in society. In 2025, NSOs in Europe started transitioning from NACE revision 2.0 to 2.1. This update creates a number of challenges including recoding large registers and holding two standards in production over an extended period of time. 
 
-# How to use it?
+This tutorial provides examples from France and Norway to illustrate examples of automating some aspects of these process.
 
-See [this tutorial](https://aiml4os.github.io/training-material-starting-pack/).
+# Motivation
+
+The recoding process can be highly resource demanding. If only manual methods are used, many NSOs would not be able to complete the task in a timely manner. Automating through rule-based systems is also time consuming to set up and rigid in a way that can be innefficient and inaccurate. Therefore, machine learning and deep-learning approaches are becoming more commonly used. 
+
+...
 
 
 
