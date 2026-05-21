@@ -1,5 +1,15 @@
 [
   {
+    "objectID": "chapters/chapter1.html",
+    "href": "chapters/chapter1.html",
+    "title": "Model training for NACE back-classification",
+    "section": "",
+    "text": "Open the associated notebook: \n\nModel training\n\n\n\nBack-classification pipeline\n\n\n\n\nConfiguration\nhttps://datalab.sspcloud.fr/launcher/ide/vscode-python?name=NACE-backclassification&version=2.5.6&s3=region-79669f20&persistence.size=«15Gi»&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FWP10-cluster5-backclassification%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FWP10-Cluster5-backclassification.git»&networking.user.enabled=true&autoLaunch=true\n\n\nExample notebooks\n\nModel training notebook",
+    "crumbs": [
+      "Model training for NACE back-classification"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Automating recoding under classification updates using textual data",
@@ -10,13 +20,13 @@
     ]
   },
   {
-    "objectID": "chapters/chapter1.html",
-    "href": "chapters/chapter1.html",
-    "title": "Model training for NACE back-classification",
+    "objectID": "chapters/chapter2.html",
+    "href": "chapters/chapter2.html",
+    "title": "Prediction of NACE for back-classification",
     "section": "",
-    "text": "Open the associated notebook: \n\nModel training\n\n\n\nBack-classification pipeline\n\n\n\n\nConfiguration\nhttps://datalab.sspcloud.fr/launcher/ide/vscode-python?name=NACE-backclassification&version=2.5.6&s3=region-79669f20&persistence.size=«15Gi»&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FWP10-cluster5-backclassification%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FWP10-Cluster5-backclassification.git»&networking.user.enabled=true&autoLaunch=true\n\n\nExample notebooks\n\nModel training notebook",
+    "text": "Open the associated notebook: \n\nPipeline overview\n\n\n\nBack-classification pipeline\n\n\n\n\nConfiguration\nhttps://datalab.sspcloud.fr/launcher/ide/vscode-python?name=NACE-backclassification&version=2.5.6&s3=region-79669f20&persistence.size=«15Gi»&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FWP10-cluster5-backclassification%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FWP10-Cluster5-backclassification.git»&networking.user.enabled=true&autoLaunch=true\n\n\nExample notebook\n\nBack classification inference notebook",
     "crumbs": [
-      "Model training for NACE back-classification"
+      "Prediction of NACE for back-classification"
     ]
   }
 ]

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://AIML4OS.github.io/WP10-cluster5-backclassification/index.html</loc>
-    <lastmod>2026-05-21T08:18:00.761Z</lastmod>
+    <loc>https://AIML4OS.github.io/WP10-cluster5-backclassification/chapters/chapter1.html</loc>
+    <lastmod>2026-05-21T08:34:57.603Z</lastmod>
   </url>
   <url>
-    <loc>https://AIML4OS.github.io/WP10-cluster5-backclassification/chapters/chapter1.html</loc>
-    <lastmod>2026-05-21T08:18:00.744Z</lastmod>
+    <loc>https://AIML4OS.github.io/WP10-cluster5-backclassification/index.html</loc>
+    <lastmod>2026-05-21T08:34:57.620Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AIML4OS.github.io/WP10-cluster5-backclassification/chapters/chapter2.html</loc>
+    <lastmod>2026-05-21T08:34:57.605Z</lastmod>
   </url>
 </urlset>
