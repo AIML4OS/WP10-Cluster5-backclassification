@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exmaple NACE back-classification pipeline – Template for training resources in Python</title>
+<title>Model training for NACE back-classification – NACE re-classification</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../chapters/chapter2.qmd" rel="next">
 <link href="../index.html" rel="prev">
 <link href="../resources/profile/main3.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -90,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/chapter1.html">Back-classification of NACE</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/chapter1.html">Model training for NACE back-classification</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,7 +126,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/chapter1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Back-classification of NACE</span></a>
+ <span class="menu-text">Model training for NACE back-classification</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/chapter2.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prediction of NACE for back-classification</span></a>
   </div>
 </li>
     </ul>
@@ -138,7 +145,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pipline-overview" id="toc-pipline-overview" class="nav-link active" data-scroll-target="#pipline-overview">Pipline overview</a></li>
+  <li><a href="#model-training" id="toc-model-training" class="nav-link active" data-scroll-target="#model-training">Model training</a></li>
+  <li><a href="#configuration" id="toc-configuration" class="nav-link" data-scroll-target="#configuration">Configuration</a></li>
   <li><a href="#example-notebooks" id="toc-example-notebooks" class="nav-link" data-scroll-target="#example-notebooks">Example notebooks</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AIML4OS/WP10-cluster5-backclassification/edit/main/chapters/chapter1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AIML4OS/WP10-cluster5-backclassification/blob/main/chapters/chapter1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/AIML4OS/WP10-cluster5-backclassification/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -148,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exmaple NACE back-classification pipeline</h1>
+<h1 class="title">Model training for NACE back-classification</h1>
 </div>
 
 
@@ -165,9 +173,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Open the associated notebook</strong>: <a href="https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Notebook1&amp;version=2.3.19&amp;s3=region-79669f20&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&amp;init.personalInitArgs=«notebooks%2Fnotebook1.ipynb»&amp;git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FAIML4OS-template-quarto-python.git»&amp;autoLaunch=true" target="_blank" rel="noopener" data-original-href="https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Notebook1&amp;version=2.3.19&amp;s3=region-79669f20&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&amp;init.personalInitArgs=«notebooks%2Fnotebook1.ipynb»&amp;git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FAIML4OS-template-quarto-python.git»&amp;autoLaunch=true"><img src="https://custom-icon-badges.demolab.com/badge/SSP%20Cloud-Launch_with_RStudio-blue?logo=vsc&amp;logoColor=white" alt="Onyxia"></a></p>
-<section id="pipline-overview" class="level1">
-<h1>Pipline overview</h1>
+<p><strong>Open the associated notebook</strong>: <a href="https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Notebook1&amp;version=2.3.19&amp;s3=region-79669f20&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&amp;init.personalInitArgs=«notebooks%2Fnotebook1.ipynb»&amp;git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FAIML4OS-template-quarto-python.git»&amp;autoLaunch=true" target="_blank" rel="noopener" data-original-href="https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Notebook1&amp;version=2.3.19&amp;s3=region-79669f20&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&amp;init.personalInitArgs=«notebooks%2Fnotebook1.ipynb»&amp;git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FAIML4OS-template-quarto-python.git»&amp;autoLaunch=true"><img src="https://custom-icon-badges.demolab.com/badge/SSP%20Cloud-Launch_with_VSCode-blue?logo=vsc&amp;logoColor=white" alt="Onyxia"></a></p>
+<section id="model-training" class="level1">
+<h1>Model training</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/NACE-diagram-implementation.png" class="img-fluid figure-img"></p>
@@ -175,11 +183,14 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
+<section id="configuration" class="level1">
+<h1>Configuration</h1>
+<p>https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=NACE-backclassification&amp;version=2.5.6&amp;s3=region-79669f20&amp;persistence.size=«15Gi»&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FWP10-cluster5-backclassification%2Frefs%2Fheads%2Fmain%2Finit.sh»&amp;git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FWP10-Cluster5-backclassification.git»&amp;networking.user.enabled=true&amp;autoLaunch=true</p>
+</section>
 <section id="example-notebooks" class="level1">
 <h1>Example notebooks</h1>
 <ul>
 <li><a href="../notebooks/train_model.ipynb">Model training notebook</a></li>
-<li><a href="../notebooks/back_classification.ipynb">Back classification inference notebook</a></li>
 </ul>
 
 
@@ -593,6 +604,9 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../chapters/chapter2.qmd" class="pagination-link" aria-label="Prediction of NACE for back-classification">
+        <span class="nav-page-text">Prediction of NACE for back-classification</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

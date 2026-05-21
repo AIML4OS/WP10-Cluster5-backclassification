@@ -6,12 +6,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Public Statistician 1">
+<meta name="author" content="Susie Jentoft">
 <meta name="author" content="Public Statistician 2">
 <meta name="dcterms.date" content="2025-05-16">
 <meta name="description" content="This template is a fast starting pack for AIML4OS projects that use Python. For R projects, see this Github repository.">
 
-<title>Automating recoding under classification updates using textual data – Template for training resources in Python</title>
+<title>Automating recoding under classification updates using textual data – NACE re-classification</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -53,8 +53,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-3e7735b7b22659e5fa437aca0bb49075.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-3e7735b7b22659e5fa437aca0bb49075.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-3e7735b7b22659e5fa437aca0bb49075.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -131,7 +129,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/chapter1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Back-classification of NACE</span></a>
+ <span class="menu-text">Model training for NACE back-classification</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapters/chapter2.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prediction of NACE for back-classification</span></a>
   </div>
 </li>
     </ul>
@@ -144,8 +148,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-this-template" id="toc-what-is-this-template" class="nav-link active" data-scroll-target="#what-is-this-template">What is this template?</a></li>
-  <li><a href="#how-to-use-it" id="toc-how-to-use-it" class="nav-link" data-scroll-target="#how-to-use-it">How to use it?</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">Motivation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AIML4OS/WP10-cluster5-backclassification/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AIML4OS/WP10-cluster5-backclassification/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/AIML4OS/WP10-cluster5-backclassification/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -170,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Authors</div>
     <div class="quarto-title-meta-contents">
-             <p><a href="https://github.com/publicstatistician1">Public Statistician 1</a> <a href="mailto:Public.Statistician1@statistics.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+             <p><a href="https://github.com/sjentoft">Susie Jentoft</a> <a href="mailto:Public.Statistician1@statistics.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
              <p><a href="https://github.com/publicstatistician2">Public Statistician 2</a> <a href="mailto:Public.Statistician2@statistics.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
           </div>
   </div>
@@ -190,13 +194,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="what-is-this-template" class="level1">
-<h1>What is this template?</h1>
-<p>This template is a Quarto Website customized for the AIML4OS project, designed to be used with <i class="fa-brands fa-python" aria-label="python"></i>.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>National statistics’ offices (NSOs) around the world, have to align their statistics to international standards, such as the industry classification NACE. Over time, international standards need to be updated to reflect changes in society. In 2025, NSOs in Europe started transitioning from NACE revision 2.0 to 2.1. This update creates a number of challenges including recoding large registers and holding two standards in production over an extended period of time.</p>
+<p>This tutorial provides examples from France and Norway to illustrate examples of automating some aspects of these process.</p>
 </section>
-<section id="how-to-use-it" class="level1">
-<h1>How to use it?</h1>
-<p>See <a href="https://aiml4os.github.io/training-material-starting-pack/">this tutorial</a>.</p>
+<section id="motivation" class="level1">
+<h1>Motivation</h1>
+<p>The recoding process can be highly resource demanding. If only manual methods are used, many NSOs would not be able to complete the task in a timely manner. Automating through rule-based systems is also time consuming to set up and rigid in a way that can be innefficient and inaccurate. Therefore, machine learning and deep-learning approaches are becoming more commonly used.</p>
+<p>…</p>
 
 
 </section>
@@ -606,8 +612,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapters/chapter1.html" class="pagination-link" aria-label="Back-classification of NACE">
-        <span class="nav-page-text">Back-classification of NACE</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapters/chapter1.html" class="pagination-link" aria-label="Model training for NACE back-classification">
+        <span class="nav-page-text">Model training for NACE back-classification</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

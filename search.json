@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Automating recoding under classification updates using textual data",
     "section": "",
-    "text": "What is this template?\nThis template is a Quarto Website customized for the AIML4OS project, designed to be used with .\n\n\nHow to use it?\nSee this tutorial.",
+    "text": "Introduction\nNational statistics’ offices (NSOs) around the world, have to align their statistics to international standards, such as the industry classification NACE. Over time, international standards need to be updated to reflect changes in society. In 2025, NSOs in Europe started transitioning from NACE revision 2.0 to 2.1. This update creates a number of challenges including recoding large registers and holding two standards in production over an extended period of time.\nThis tutorial provides examples from France and Norway to illustrate examples of automating some aspects of these process.\n\n\nMotivation\nThe recoding process can be highly resource demanding. If only manual methods are used, many NSOs would not be able to complete the task in a timely manner. Automating through rule-based systems is also time consuming to set up and rigid in a way that can be innefficient and inaccurate. Therefore, machine learning and deep-learning approaches are becoming more commonly used.\n…",
     "crumbs": [
       "Introduction"
     ]
@@ -12,11 +12,11 @@
   {
     "objectID": "chapters/chapter1.html",
     "href": "chapters/chapter1.html",
-    "title": "Exmaple NACE back-classification pipeline",
+    "title": "Model training for NACE back-classification",
     "section": "",
-    "text": "Open the associated notebook: \n\nPipline overview\n\n\n\nBack-classification pipeline\n\n\n\n\nExample notebooks\n\nModel training notebook\nBack classification inference notebook",
+    "text": "Open the associated notebook: \n\nModel training\n\n\n\nBack-classification pipeline\n\n\n\n\nConfiguration\nhttps://datalab.sspcloud.fr/launcher/ide/vscode-python?name=NACE-backclassification&version=2.5.6&s3=region-79669f20&persistence.size=«15Gi»&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FWP10-cluster5-backclassification%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FWP10-Cluster5-backclassification.git»&networking.user.enabled=true&autoLaunch=true\n\n\nExample notebooks\n\nModel training notebook",
     "crumbs": [
-      "Back-classification of NACE"
+      "Model training for NACE back-classification"
     ]
   }
 ]
