@@ -7,7 +7,13 @@ __Open the associated notebook__: <a href="https://datalab.sspcloud.fr/launcher/
 
 # Model training
 
-![Back-classification pipeline](../images/NACE-diagram-implementation.png)
+This example notebook provides an example of the model training process using MLflow to register and save the model. The algorithm chosen is a Support Vector Machine, supervised machine learning method using a linear kernel. The learning process includes the following steps:
+
+- Set up MLFlow environment
+- Fetch training data
+- Filter training data for only groups that split and have no associated rules
+- Preprocess text variables
+- Train and save model
 
 # Configuration
 https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=NACE-backclassification&version=2.5.6&s3=region-79669f20&persistence.size=«15Gi»&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FWP10-cluster5-backclassification%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FWP10-Cluster5-backclassification.git»&networking.user.enabled=true&autoLaunch=true
