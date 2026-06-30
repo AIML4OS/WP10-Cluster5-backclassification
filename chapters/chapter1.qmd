@@ -16,8 +16,8 @@ This example notebook provides an example of the model training process using ML
 - Train and save model
 
 ## Demonstration data {#data}
-Demonstration data for the training process is openly available on the SSPcloud. While the company activity descriptions and NACE rev. 2.1 codes are extracted from real data in the Norwegian business register, the NACE rev. 2.0 has been synthetically added for demonstrations purposes. The variables in the demonstration data are the same as the general NACE demonstration data described on the [WP10 Github page](https://github.com/AIML4OS/WP10/tree/main/NorwayTestData). In addition, the following variable is included:
+Demonstration data for the training process is openly available on the SSPcloud. While the company activity descriptions and NACE rev. 2.1 codes are extracted from real data in the Norwegian business register, the NACE rev. 2.0 has been synthetically added for demonstration purposes. The variables in the demonstration data are the same as the general NACE demonstration data described on the [WP10 Github page](https://github.com/AIML4OS/WP10/tree/main/NorwayTestData). In addition, the following variable is included:
 
-- nace_20_code: (str) Standard industrial classification (synthestic) for the business (NACE) rev. 2.0. This is the 4-digit European standard.
+- nace_20_code: (str) Standard industrial classification (synthetic) for the business (NACE) rev. 2.0. This is the 4-digit European standard.
 
-The Python program for creating the demonstration data can be found on the pipline GitHub under [notebooks/utils/create_demo_data.py](https://github.com/AIML4OS/WP10-Cluster5-backclassification/blob/main/notebooks/utils/create_demo_data.py).
+The Python program for creating the demonstration data can be found on the current GitHub under [notebooks/utils/create_demo_data.py](https://github.com/AIML4OS/WP10-Cluster5-backclassification/blob/main/notebooks/utils/create_demo_data.py).

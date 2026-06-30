@@ -10,4 +10,4 @@ __Open the associated notebook__: <a href="https://datalab.sspcloud.fr/launcher/
 ![Back-classification pipeline](../images/NACE-diagram-implementation.png)
 
 ## Demonstration data
-Demonstration data for the prediction process is openly available on the SSPcloud. For more infomation on the demonstration data see the [section on demonstration data in the training data page](chapter1.qmd#data).
+Demonstration data for the prediction process is openly available on the SSPcloud. For more infomation on the demonstration data see the [section on demonstration data on the training data page](chapter1.qmd#data).
