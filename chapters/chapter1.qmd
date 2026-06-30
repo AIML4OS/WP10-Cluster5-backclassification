@@ -7,7 +7,7 @@ __Open the associated notebook__: <a href="https://datalab.sspcloud.fr/launcher/
 
 # Model training
 
-This example notebook provides an example of the model training process using MLflow to register and save the model. The algorithm chosen is a Support Vector Machine, supervised machine learning method using a linear kernel. The learning process includes the following steps:
+This example notebook provides an example of the model training process using MLflow to register and save the model. The algorithm chosen is a Support Vector Machine, supervised machine learning (SVM) method using a linear kernel. The learning process includes the following steps:
 
 - Set up MLFlow environment
 - Fetch training data
@@ -15,10 +15,6 @@ This example notebook provides an example of the model training process using ML
 - Preprocess text variables
 - Train and save model
 
-# Configuration
-https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=NACE-backclassification&version=2.5.6&s3=region-79669f20&persistence.size=«15Gi»&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FWP10-cluster5-backclassification%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FWP10-Cluster5-backclassification.git»&networking.user.enabled=true&autoLaunch=true
-
-# Example notebooks
-
-- [Model training notebook](../notebooks/train_model.ipynb)
+# Example notebook
+An example notebook is provided for testing a pipline for training a SVM model. To run the example, use the following [link to the model training notebook on SSPcloud](https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=NACE-backclassification-training&version=2.5.6&s3=default&persistence.size=«15Gi»&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FWP10-cluster5-backclassification%2Frefs%2Fheads%2Fmain%2Finit.sh»&init.personalInitArgs=«notebooks%2F01_train_model.ipynb»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FWP10-Cluster5-backclassification.git»&networking.user.enabled=true&autoLaunch=true)
 
