@@ -4,7 +4,27 @@
     "href": "chapters/chapter2.html",
     "title": "Prediction of NACE for back-classification",
     "section": "",
-    "text": "Open the associated notebook: \n\nPipeline overview\n\n\n\nBack-classification pipeline\n\n\n\n\nExample notebook\nAn example notebook is provided for pipline for predicting the back-classification. To run the example, use the following link to the model prediction notebook on SSPcloud.",
+    "text": "Open the associated notebook:",
+    "crumbs": [
+      "Prediction of NACE for back-classification"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter2.html#pipeline-overview",
+    "href": "chapters/chapter2.html#pipeline-overview",
+    "title": "Prediction of NACE for back-classification",
+    "section": "Pipeline overview",
+    "text": "Pipeline overview\n\n\n\nBack-classification pipeline",
+    "crumbs": [
+      "Prediction of NACE for back-classification"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter2.html#demonstration-data",
+    "href": "chapters/chapter2.html#demonstration-data",
+    "title": "Prediction of NACE for back-classification",
+    "section": "Demonstration data",
+    "text": "Demonstration data\nDemonstration data for the prediction process is openly available on the SSPcloud. For more infomation on the demonstration data see the section on demonstration data on the training data page.",
     "crumbs": [
       "Prediction of NACE for back-classification"
     ]
@@ -24,7 +44,27 @@
     "href": "chapters/chapter1.html",
     "title": "Model training for NACE back-classification",
     "section": "",
-    "text": "Open the associated notebook: \n\nModel training\nThis example notebook provides an example of the model training process using MLflow to register and save the model. The algorithm chosen is a Support Vector Machine, supervised machine learning (SVM) method using a linear kernel. The learning process includes the following steps:\n\nSet up MLFlow environment\nFetch training data\nFilter training data for only groups that split and have no associated rules\nPreprocess text variables\nTrain and save model\n\n\n\nExample notebook\nAn example notebook is provided for testing a pipline for training a SVM model. To run the example, use the following link to the model training notebook on SSPcloud",
+    "text": "Open the associated notebook:",
+    "crumbs": [
+      "Model training for NACE back-classification"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter1.html#model-training",
+    "href": "chapters/chapter1.html#model-training",
+    "title": "Model training for NACE back-classification",
+    "section": "Model training",
+    "text": "Model training\nThis example notebook provides an example of the model training process using MLflow to register and save the model. The algorithm chosen is a Support Vector Machine, supervised machine learning (SVM) method using a linear kernel. The learning process includes the following steps:\n\nSet up MLFlow environment\nFetch training data\nFilter training data for only groups that split and have no associated rules\nPreprocess text variables\nTrain and save model",
+    "crumbs": [
+      "Model training for NACE back-classification"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter1.html#data",
+    "href": "chapters/chapter1.html#data",
+    "title": "Model training for NACE back-classification",
+    "section": "Demonstration data",
+    "text": "Demonstration data\nDemonstration data for the training process is openly available on the SSPcloud. While the company activity descriptions and NACE rev. 2.1 codes are extracted from real data in the Norwegian business register, the NACE rev. 2.0 has been synthetically added for demonstration purposes. The variables in the demonstration data are the same as the general NACE demonstration data described on the WP10 Github page. In addition, the following variable is included:\n\nnace_20_code: (str) Standard industrial classification (synthetic) for the business (NACE) rev. 2.0. This is the 4-digit European standard.\n\nThe Python program for creating the demonstration data can be found on the current GitHub under notebooks/utils/create_demo_data.py.",
     "crumbs": [
       "Model training for NACE back-classification"
     ]
