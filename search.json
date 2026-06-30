@@ -1,12 +1,12 @@
 [
   {
-    "objectID": "chapters/chapter1.html",
-    "href": "chapters/chapter1.html",
-    "title": "Model training for NACE back-classification",
+    "objectID": "chapters/chapter2.html",
+    "href": "chapters/chapter2.html",
+    "title": "Prediction of NACE for back-classification",
     "section": "",
-    "text": "Open the associated notebook: \n\nModel training\nThis example notebook provides an example of the model training process using MLflow to register and save the model. The algorithm chosen is a Support Vector Machine, supervised machine learning method using a linear kernel. The learning process includes the following steps:\n\nSet up MLFlow environment\nFetch training data\nFilter training data for only groups that split and have no associated rules\nPreprocess text variables\nTrain and save model\n\n\n\nConfiguration\nhttps://datalab.sspcloud.fr/launcher/ide/vscode-python?name=NACE-backclassification&version=2.5.6&s3=region-79669f20&persistence.size=«15Gi»&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FWP10-cluster5-backclassification%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FWP10-Cluster5-backclassification.git»&networking.user.enabled=true&autoLaunch=true\n\n\nExample notebooks\n\nModel training notebook",
+    "text": "Open the associated notebook: \n\nPipeline overview\n\n\n\nBack-classification pipeline\n\n\n\n\nExample notebook\nAn example notebook is provided for pipline for predicting the back-classification. To run the example, use the following link to the model prediction notebook on SSPcloud.",
     "crumbs": [
-      "Model training for NACE back-classification"
+      "Prediction of NACE for back-classification"
     ]
   },
   {
@@ -20,13 +20,13 @@
     ]
   },
   {
-    "objectID": "chapters/chapter2.html",
-    "href": "chapters/chapter2.html",
-    "title": "Prediction of NACE for back-classification",
+    "objectID": "chapters/chapter1.html",
+    "href": "chapters/chapter1.html",
+    "title": "Model training for NACE back-classification",
     "section": "",
-    "text": "Open the associated notebook: \n\nPipeline overview\n\n\n\nBack-classification pipeline\n\n\n\n\nConfiguration\nhttps://datalab.sspcloud.fr/launcher/ide/vscode-python?name=NACE-backclassification&version=2.5.6&s3=region-79669f20&persistence.size=«15Gi»&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FWP10-cluster5-backclassification%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FWP10-Cluster5-backclassification.git»&networking.user.enabled=true&autoLaunch=true\n\n\nExample notebook\n\nBack classification inference notebook",
+    "text": "Open the associated notebook: \n\nModel training\nThis example notebook provides an example of the model training process using MLflow to register and save the model. The algorithm chosen is a Support Vector Machine, supervised machine learning (SVM) method using a linear kernel. The learning process includes the following steps:\n\nSet up MLFlow environment\nFetch training data\nFilter training data for only groups that split and have no associated rules\nPreprocess text variables\nTrain and save model\n\n\n\nExample notebook\nAn example notebook is provided for testing a pipline for training a SVM model. To run the example, use the following link to the model training notebook on SSPcloud",
     "crumbs": [
-      "Prediction of NACE for back-classification"
+      "Model training for NACE back-classification"
     ]
   }
 ]
