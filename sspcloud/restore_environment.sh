@@ -5,7 +5,14 @@ echo "Executing the restore_environment.sh script"
 cd $MY_REPO
 
 # Create a virtual environment and install project dependencies
+
+ 
+
 uv sync
+
+# Create kernel: uv run ipython kernel install --user --name="python-classification" Switch to this kernel (see top right in jupyter)
+
+
 
 # Change directory
 cd ..

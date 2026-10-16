@@ -5,9 +5,10 @@ import getpass
 dato = str(datetime.today().strftime('%Y-%m-%d'))
 seed = int(dato.replace("-", ""))
 
+bucket = "projet-aiml4os-wp10/Cluster5"
 bucket_info = {
-    bucket = "projet-aiml4os-wp10/Cluster5"
-    bucket_url = f"https://minio.lab.sspcloud.fr/{bucket}"
+    'bucket': bucket,
+    'bucket_url': f"https://minio.lab.sspcloud.fr/{bucket}"
     }
 
 path_info = {
